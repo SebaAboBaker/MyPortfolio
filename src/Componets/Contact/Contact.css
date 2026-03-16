@@ -1,0 +1,212 @@
+.Contact {
+    padding: 70px 92px 60px;
+    background-color: #ffffff;
+    transition: 0.3s;
+
+    &.Contact-dark {
+        background-color: #1d2130;
+
+        .ContactTitle2  { color: #ffffff; }
+        .ContactValue   { color: #ffffff; }
+
+        .ContactForm {
+            input, textarea {
+                background-color: #111827;
+                border: 1px solid #374151;
+                color: #ffffff;
+
+                &::placeholder { color: #6b7280; }
+            }
+        }
+    }
+
+    .ContactContainer { width: 100%; }
+
+    .ContactHeader {
+        opacity: 0;
+        transform: translateY(28px);
+        transition: opacity 1s ease, transform 1s ease;
+        margin-bottom: 40px;
+    }
+
+    .ContactTitle1 {
+        font-size: 20px;
+        font-weight: 500;
+        color: #0c96e2;
+    }
+
+    .ContactTitle2 {
+        font-size: 40px;
+        font-weight: 600;
+        color: #1d2130;
+        line-height: 1.2;
+
+        span { color: #0c96e2; }
+    }
+
+    .ContactContent {
+        display: flex;
+        justify-content: space-between;
+        gap: 50px;
+    }
+
+    .ContactInfo {
+        width: 260px;
+        display: flex;
+        flex-direction: column;
+        gap: 34px;
+        opacity: 0;
+        transform: translateX(-35px);
+        transition: opacity 1s ease, transform 1s ease;
+        transition-delay: 0.2s;
+    }
+
+    .ContactItem {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        text-decoration: none;
+        transition: 0.3s;
+
+        &:hover { transform: translateX(6px); }
+    }
+
+    .ContactIcon {
+        width: 44px;
+        height: 44px;
+        border-radius: 8px;
+        background-color: #0c96e2;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+
+        img {
+            width: 20px;
+            height: 20px;
+            object-fit: contain;
+        }
+    }
+
+    .ContactDatails {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+    }
+
+    .ContactLabel {
+        font-size: 16px;
+        font-weight: 400;
+        color: #92929D;
+    }
+
+    .ContactValue {
+        font-size: 16px;
+        font-weight: 500;
+        color: #1d2130;
+    }
+
+    .ContactFormContainer {
+        flex: 1;
+        opacity: 0;
+        transform: translateX(35px);
+        transition: opacity 1s ease, transform 1s ease;
+        transition-delay: 0.35s;
+    }
+
+    .ContactForm {
+        width: 100%;
+
+        input, textarea {
+            width: 100%;
+            border: 1px solid #d1d5db;
+            border-radius: 8px;
+            outline: none;
+            background-color: transparent;
+            font-size: 14px;
+            color: #1d2130;
+            padding: 14px 16px;
+            box-sizing: border-box;
+            transition: 0.3s;
+
+            &::placeholder { color: #9ca3af; }
+            &:focus        { border-color: #0c96e2; }
+        }
+
+        input  { height: 48px; }
+
+        textarea {
+            min-height: 130px;
+            resize: none;
+            margin-bottom: 18px;
+        }
+    }
+
+    .ContactRow {
+        display: flex;
+        gap: 16px;
+        margin-bottom: 14px;
+
+        input { width: 100%; }
+    }
+
+    .FullInput { margin-bottom: 14px; }
+
+    .ContactButton {
+        width: 160px;
+        height: 46px;
+        border: none;
+        border-radius: 8px;
+        background-color: #0c96e2;
+        color: #ffffff;
+        font-size: 14px;
+        font-weight: 500;
+        cursor: pointer;
+        transition: 0.3s;
+
+        &:hover {
+            transform: translateY(-2px);
+            background-color: deepskyblue;
+        }
+    }
+
+    &.show-contact {
+        .ContactHeader {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .ContactInfo {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .ContactFormContainer {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+
+    @media (max-width: 992px) {
+        padding: 60px 40px 50px;
+
+        .ContactContent   { flex-direction: column; }
+        .ContactInfo      { width: 100%; }
+        .ContactTitle2    { font-size: 36px; }
+    }
+
+    @media (max-width: 576px) {
+        padding: 50px 20px 40px;
+
+        .ContactTitle2 { font-size: 30px; }
+
+        .ContactRow { flex-direction: column; }
+
+        .ContactButton {
+            width: 140px;
+            height: 44px;
+        }
+
+        .ContactValue { font-size: 15px; }
+    }
+}

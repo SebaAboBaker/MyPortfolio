@@ -1,0 +1,249 @@
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    background-color: #ffffff;
+    border-bottom: 1px solid #e2e8f0;
+    transition: 0.3s;
+    overflow-x: hidden;
+}
+
+.navbar.navbar-dark {
+    background-color: #1d2130;
+    border-bottom: 1px solid #1d2130;
+}
+
+.NavBarContainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+    padding: 10px 30px;
+}
+
+.NavBarLogo {
+    height: 36px;
+    font-weight: 600;
+    font-size: 24px;
+    color: #1d2130;
+    display: flex;
+    align-items: center;
+}
+
+.navbar-dark .NavBarLogo {
+    color: #ffffff;
+}
+
+.NavBarLinks {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar-item {
+    font-weight: 600;
+    font-size: 16px;
+    color: #1d2130;
+    text-decoration: none;
+    position: relative;
+    padding-bottom: 4px;
+    transition: color 0.3s ease;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.navbar-item::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #0c96e2;
+    transition: width 0.3s ease;
+}
+
+.navbar-item:hover {
+    color: #0c96e2;
+}
+
+.navbar-item:hover::after {
+    width: 100%;
+}
+
+.navbar-item-active {
+    color: #0c96e2;
+    font-weight: 600;
+}
+
+.navbar-item-active::after {
+    width: 100%;
+}
+
+.navbar-dark .navbar-item {
+    color: #ffffff;
+}
+
+.navbar-dark .navbar-item:hover {
+    color: #4f8ef7;
+}
+
+.navbar-dark .navbar-item::after {
+    background-color: #4f8ef7;
+}
+
+.navbar-dark .navbar-item-active {
+    color: #4f8ef7;
+}
+
+.navbar-dark .navbar-item-active::after {
+    width: 100%;
+    background-color: #4f8ef7;
+}
+
+.NavBarRight {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.NavBarButton {
+    width: 40px;
+    height: 40px;
+    border: none;
+    background: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    padding: 0;
+}
+
+.NavBarButton img {
+    width: 30px;
+    height: 30px;
+    object-fit: contain;
+}
+
+.HamburgerBtn {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    width: 36px;
+    height: 36px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+}
+
+.HamburgerBtn span {
+    display: block;
+    width: 22px;
+    height: 2px;
+    background-color: #1d2130;
+    border-radius: 2px;
+    transition: 0.3s;
+}
+
+.navbar-dark .HamburgerBtn span {
+    background-color: #ffffff;
+}
+
+.HamburgerBtn.open span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+}
+
+.HamburgerBtn.open span:nth-child(2) {
+    opacity: 0;
+}
+
+.HamburgerBtn.open span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+}
+
+.MobileMenu {
+    display: none;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+}
+
+.MobileMenu.MobileMenu-open {
+    max-height: 400px;
+}
+
+.MobileMenu ul {
+    list-style: none;
+    margin: 0;
+    padding: 16px 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    background-color: #ffffff;
+    border-top: 1px solid #e2e8f0;
+    overflow-x: hidden;
+}
+
+.MobileMenu.MobileMenu-dark ul {
+    background-color: #1d2130;
+    border-top: 1px solid #374151;
+}
+
+.MobileMenu .navbar-item-active {
+    color: #0c96e2;
+}
+
+.MobileMenu.MobileMenu-dark .navbar-item-active {
+    color: #4f8ef7;
+}
+
+@media (max-width: 768px) {
+    .NavBarContainer {
+        padding: 10px 20px;
+        gap: 16px;
+    }
+
+    .NavBarLinks {
+        gap: 14px;
+    }
+
+    .navbar-item {
+        font-size: 14px;
+    }
+
+    .NavBarLogo {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 576px) {
+    .NavBarLinks {
+        display: none;
+    }
+
+    .HamburgerBtn {
+        display: flex;
+    }
+
+    .MobileMenu {
+        display: block;
+    }
+
+    .NavBarContainer {
+        padding: 10px 16px;
+    }
+
+    .NavBarLogo {
+        font-size: 18px;
+    }
+}

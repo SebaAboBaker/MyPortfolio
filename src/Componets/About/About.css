@@ -1,0 +1,260 @@
+.About {
+    min-height: 530px;
+    height: auto;
+    padding: 90px 70px;
+    background-color: #ffffff;
+    transition: 0.3s;
+
+    &.About-dark {
+        background-color: #1d2130;
+
+        .AboutTitle      { color: #ffffff; }
+        .AboutDescription { color: #ffffff; }
+
+        .SkillTop span:first-child { color: #ffffff; }
+    }
+
+    .AboutContainer {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 60px;
+    }
+
+    .AboutLeft {
+        display: flex;
+        margin-top: 50px;
+        opacity: 0;
+        transform: scale(0.88) rotate(-8deg);
+        transition: opacity 1.4s ease, transform 1.4s ease;
+    }
+
+    .AboutRight {
+        width: 590px;
+        max-width: 100%;
+        height: auto;
+        margin-right: 125px;
+        opacity: 0;
+        transform: translateX(40px);
+        transition: opacity 1.4s ease, transform 1.4s ease;
+        transition-delay: 0.3s;
+    }
+
+    &.show-about {
+        .AboutLeft {
+            opacity: 1;
+            transform: scale(1) rotate(0);
+        }
+
+        .AboutRight {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .CBG { animation: slowRotate 12s linear infinite; }
+
+        .HtmlIcon   { animation: floatIcon1 5.5s ease-in-out infinite; }
+        .JsIcon     { animation: floatIcon2 6.0s ease-in-out infinite; }
+        .FigmaIcon  { animation: floatIcon3 5.8s ease-in-out infinite; }
+        .GitHubIcon { animation: floatIcon4 6.2s ease-in-out infinite; }
+        .ReactIcon  { animation: floatIcon5 5.6s ease-in-out infinite; }
+
+        .HtmlFill  { width: 90%; transition-delay: 0.4s; }
+        .CSSFill   { width: 85%; transition-delay: 0.7s; }
+        .JSFill    { width: 95%; transition-delay: 1.0s; }
+        .ReactFill { width: 90%; transition-delay: 1.3s; }
+    }
+
+    .Box {
+        position: relative;
+        width: 380px;
+        height: 380px;
+    }
+
+    .CBG {
+        width: 100%;
+        height: 100%;
+        transition: transform 1s ease;
+    }
+
+    .HtmlIcon {
+        width: 50px;
+        height: 82px;
+        top: 60px;
+        left: 60px;
+        position: absolute;
+        object-fit: contain;
+    }
+
+    .JsIcon {
+        width: 57px;
+        height: 86px;
+        top: 153px;
+        left: 157px;
+        position: absolute;
+        object-fit: contain;
+    }
+
+    .FigmaIcon {
+        width: 60px;
+        height: 86px;
+        top: 97px;
+        right: 77px;
+        position: absolute;
+        object-fit: contain;
+    }
+
+    .GitHubIcon {
+        width: 60px;
+        bottom: 92px;
+        left: 89px;
+        position: absolute;
+        object-fit: contain;
+    }
+
+    .ReactIcon {
+        width: 60px;
+        bottom: 60px;
+        right: 74px;
+        position: absolute;
+        object-fit: contain;
+    }
+
+    .AboutTitle {
+        font-size: 40px;
+        font-weight: 600;
+        color: #1D2130;
+        margin-bottom: 18px;
+    }
+
+    .AboutDescription {
+        max-width: 520px;
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 1.8;
+        color: #1D2130;
+        margin-bottom: 35px;
+    }
+
+    .SkillsBox {
+        width: 100%;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        gap: 22px;
+    }
+
+    .SkillItem { width: 100%; }
+
+    .SkillTop {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 10px;
+
+        span:first-child {
+            font-size: 26px;
+            font-weight: 600;
+            color: #1D2130;
+        }
+    }
+
+    .SkillPercentImg { width: 40px; }
+
+    .SkillBar {
+        width: 100%;
+        height: 7px;
+        background-color: #e5e5e5;
+        border-radius: 20px;
+        overflow: hidden;
+    }
+
+    .HtmlFill,
+    .CSSFill,
+    .JSFill,
+    .ReactFill {
+        height: 100%;
+        background-color: #0C96E2;
+        border-radius: 20px;
+        position: relative;
+        width: 0;
+        transition: width 1.8s ease;
+
+        &::after {
+            content: "";
+            position: absolute;
+            right: -8px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 14px;
+            height: 14px;
+            background-color: #ffffff;
+            border: 3px solid #0C96E2;
+            border-radius: 50%;
+        }
+    }
+
+    @media (max-width: 992px) {
+        padding: 70px 40px;
+
+        .AboutContainer {
+            flex-direction: column;
+            gap: 50px;
+        }
+
+        .AboutLeft,
+        .AboutRight {
+            width: 100%;
+            margin-right: 0;
+        }
+
+        .AboutRight { text-align: center; }
+
+        .AboutDescription {
+            max-width: 100%;
+            margin: 0 auto 35px auto;
+        }
+
+        .Box {
+            width: 320px;
+            height: 320px;
+            margin: 0 auto;
+        }
+
+        .AboutTitle { font-size: 40px; }
+
+        .SkillTop span:first-child { font-size: 22px; }
+    }
+
+    @media (max-width: 576px) {
+        padding: 60px 20px;
+
+        .Box {
+            width: 260px;
+            height: 260px;
+        }
+
+        .HtmlIcon   { width: 42px; top: 40px;    left: 35px;  }
+        .JsIcon     { width: 42px; top: 100px;   left: 90px;  }
+        .FigmaIcon  { width: 42px; top: 65px;    right: 35px; }
+        .GitHubIcon { width: 42px; bottom: 55px; left: 35px;  }
+        .ReactIcon  { width: 45px; bottom: 25px; right: 28px; }
+
+        .AboutTitle       { font-size: 32px; }
+        .AboutDescription { font-size: 14px; }
+
+        .SkillTop span:first-child { font-size: 18px; }
+        .SkillPercentImg           { width: 36px;     }
+    }
+}
+
+@keyframes slowRotate {
+    from { transform: rotate(0deg);   }
+    to   { transform: rotate(360deg); }
+}
+
+@keyframes floatIcon1 { 0%, 100% { transform: translateY(0);   } 50% { transform: translateY(-8px); } }
+@keyframes floatIcon2 { 0%, 100% { transform: translateY(0);   } 50% { transform: translateY( 7px); } }
+@keyframes floatIcon3 { 0%, 100% { transform: translateY(0);   } 50% { transform: translateY(-6px); } }
+@keyframes floatIcon4 { 0%, 100% { transform: translateY(0);   } 50% { transform: translateY( 8px); } }
+@keyframes floatIcon5 { 0%, 100% { transform: translateY(0);   } 50% { transform: translateY(-7px); } }

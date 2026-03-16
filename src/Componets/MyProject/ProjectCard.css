@@ -1,0 +1,97 @@
+.ProjectCard {
+    width: 100%;
+    opacity: 0;
+    transform: translateY(25px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+
+    .ProjectImageLink {
+        width: 100%;
+        display: block;
+        text-decoration: none;
+    }
+
+    .ProjectImage {
+        width: 100%;
+        height: 202px;
+        display: block;
+        object-fit: cover;
+        border-radius: 8px;
+    }
+
+    .ProjectInfo {
+        margin-top: 14px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 18px;
+    }
+
+    .ProjectText {
+        display: flex;
+        flex-direction: column;
+        min-width: 0;
+    }
+
+    .ProjectTitle {
+        font-size: 22px;
+        font-weight: 600;
+        color: #1d2130;
+        text-decoration: none;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .ProjectTech {
+        font-size: 16px;
+        font-weight: 400;
+        color: #4b5563;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .ProjectArrow {
+        width: 34px;
+        height: 34px;
+        flex-shrink: 0;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+    }
+
+    &.ProjectCard-dark {
+        .ProjectTitle { color: #ffffff;  }
+        .ProjectTech  { color: #d1d5db; }
+    }
+
+    @media (max-width: 992px) {
+        .ProjectImage  { height: 180px; }
+        .ProjectTitle  { font-size: 18px; }
+    }
+
+    @media (max-width: 576px) {
+        .ProjectImage  { height: 160px; }
+        .ProjectTitle  { font-size: 16px; }
+        .ProjectTech   { font-size: 13px; }
+
+        .ProjectArrow {
+            width: 28px;
+            height: 28px;
+        }
+    }
+}
+
+.show-projects {
+    .ProjectCard {
+        opacity: 1;
+        transform: translateY(0);
+
+        @for $i from 1 through 6 {
+            &:nth-child(#{$i}) { transition-delay: #{$i * 0.1}s; }
+        }
+    }
+}

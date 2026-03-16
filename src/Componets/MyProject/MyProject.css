@@ -1,0 +1,110 @@
+.MyProject {
+    padding: 70px 92px 100px;
+    background-color: #ffffff;
+    transition: 0.3s;
+
+    &.MyProject-dark {
+        background-color: #1d2130;
+
+        .MyProjectTitle2 { color: #ffffff; }
+    }
+
+    .MyProjectContainer { width: 100%; }
+
+    .MyProjectHeader {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 45px;
+    }
+
+    .MyProjectTitleBox {
+        width: 390px;
+        max-width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .MyProjectTitle1 {
+        font-size: 20px;
+        font-weight: 500;
+        color: #0c96e2;
+        margin-bottom: 8px;
+    }
+
+    .MyProjectTitle2 {
+        font-size: 40px;
+        font-weight: 600;
+        line-height: 1.2;
+        color: #1d2130;
+
+        span { color: #0c96e2; }
+    }
+
+    .MyProjectButton {
+        width: 155px;
+        height: 50px;
+        border-radius: 8px;
+        background-color: #0c96e2;
+        color: #ffffff;
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 14px;
+        font-weight: 500;
+        transition: 0.3s;
+        flex-shrink: 0;
+
+        &:hover {
+            transform: translateY(-2px);
+            background-color: darkturquoise;
+        }
+    }
+
+    .MyProjectGrid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 38px 34px;
+    }
+
+    @media (max-width: 1200px) {
+        padding: 70px 60px 100px;
+
+        .MyProjectGrid { gap: 30px 24px; }
+    }
+
+    @media (max-width: 992px) {
+        padding: 60px 40px 80px;
+
+        .MyProjectHeader {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 24px;
+        }
+
+        .MyProjectTitleBox { width: 100%; }
+        .MyProjectTitle2   { font-size: 38px; }
+
+        .MyProjectGrid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    @media (max-width: 576px) {
+        padding: 50px 20px 70px;
+
+        .MyProjectTitle2 { font-size: 30px; }
+
+        .MyProjectGrid {
+            grid-template-columns: 1fr;
+            gap: 28px;
+        }
+
+        .MyProjectButton {
+            width: 140px;
+            height: 46px;
+            font-size: 13px;
+        }
+    }
+}
